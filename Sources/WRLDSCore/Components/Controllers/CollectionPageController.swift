@@ -10,16 +10,16 @@ import UIKit
 
 public class CollectionPageController: DefaultViewController {
     
-    var manager: CollectionPageManager!
-    var collectionView: PageCollectionView!
-    var menubar: MenuBar!
-    var placeholderView: PlaceholderView?
+    public var manager: CollectionPageManager!
+    public var collectionView: PageCollectionView!
+    public var menubar: MenuBar!
+    public var placeholderView: PlaceholderView?
     
     public init() {
         super.init(nibName: nil, bundle: nil)
     }
     
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         collectionView = PageCollectionView(frame: CGRect(x: 0, y: view.safeAreaLayoutGuide.layoutFrame.minY + 35, width: view.frame.width, height: view.safeAreaLayoutGuide.layoutFrame.height - 150))
         menubar = MenuBar(frame: CGRect(x:0, y: self.view.safeAreaLayoutGuide.layoutFrame.minY, width: view.frame.width, height: 35), delegate: self, dataSource: manager)
@@ -104,20 +104,22 @@ extension CollectionPageController: UICollectionViewDelegate, UICollectionViewDa
 }
 
 
-extension CollectionPageController: MenuBarDelegate {
+public extension CollectionPageController: MenuBarDelegate {
     public func didSelectTab(at indexPath: IndexPath) {
         collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
     }
 }
 
-protocol CollectionPageManager: MenuBarDataSource {
+
+public protocol CollectionPageManager: MenuBarDataSource {
     var placeholderModel: PlaceholderViewModel? { get }
     var numberOfPages: Int { get }
     func collectionView(withFrame frame: CGRect, forCellAt indexPath: IndexPath) -> UICollectionView
     func didScroll(to page: Int) -> Void
 }
 
-extension CollectionPageManager {
+
+public extension CollectionPageManager {
     var placeholderModel: PlaceholderViewModel? { return nil }
 }
 
