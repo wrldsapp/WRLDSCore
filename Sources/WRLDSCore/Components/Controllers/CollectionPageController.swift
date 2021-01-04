@@ -104,7 +104,7 @@ extension CollectionPageController: UICollectionViewDelegate, UICollectionViewDa
 }
 
 
-public extension CollectionPageController: MenuBarDelegate {
+extension CollectionPageController: MenuBarDelegate {
     public func didSelectTab(at indexPath: IndexPath) {
         collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
     }

@@ -21,7 +21,7 @@ open class DefaultViewController: UIViewController {
     lazy var loader = Loader(parent: self.view)
     public var tapToDismissGesture: UITapGestureRecognizer!
     
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .backgroundGray
         navigationController?.navigationBar.barTintColor = .backgroundGray
