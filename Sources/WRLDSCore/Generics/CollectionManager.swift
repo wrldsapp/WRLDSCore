@@ -18,7 +18,7 @@ public extension CollectionManager {
     var cells: [UICollectionViewCell.Type]? {
         guard let items = self.items else {return nil}
         return items.map { type(of: $0).collectionCellType }}
-   // var items: [Configurator]? { return nil }
+   var items: [Configurator]? { return nil }
 }
 
 @objc public protocol CollectionManagerDelegate {
