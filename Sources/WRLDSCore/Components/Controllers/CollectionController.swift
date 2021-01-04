@@ -63,7 +63,7 @@ open class CollectionController: DefaultViewController {
 }
 
 
-extension CollectionController {
+public extension CollectionController {
     func reload(items: [Int]) {
         self.collectionView.reloadItems(items: items)
     }
