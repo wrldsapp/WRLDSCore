@@ -11,7 +11,7 @@ import UIKit
 /// Default text field. Can be configured for various FieldInputType cases
 public class TextField: UITextField {
     
-    var type: FieldInputType? {
+    public var type: FieldInputType? {
         didSet {
             guard let type = type else {return}
             setup(forType: type)
