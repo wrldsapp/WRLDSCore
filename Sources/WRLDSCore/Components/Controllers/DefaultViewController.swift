@@ -11,7 +11,7 @@ import Lottie
 
 open class DefaultViewController: UIViewController {
 
-    public override var title: String? {
+    open override var title: String? {
         didSet {
             let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15, weight: .bold)]
             self.navigationController?.navigationBar.titleTextAttributes = attributes
