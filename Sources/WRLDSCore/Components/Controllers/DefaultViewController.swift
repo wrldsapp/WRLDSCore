@@ -108,7 +108,7 @@ open class DefaultViewController: UIViewController {
     }
     
     
-    func showNavSeparator() {
+    public func showNavSeparator() {
         if let nav = self.navigationController as? NavigationController {
             nav.showNavSeparator()
         }
