@@ -13,7 +13,7 @@ public protocol CollectionManager: UICollectionViewDataSource, UICollectionViewD
     var cells: [UICollectionViewCell.Type]? { get }
 }
 
-public extension CollectionManager {
+extension CollectionManager {
     var cells: [UICollectionViewCell.Type]? {
         print("ATTEMPTING TO GET CELLS")
         guard let items = self.items else {return nil}
