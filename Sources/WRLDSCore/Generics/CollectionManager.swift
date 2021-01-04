@@ -9,12 +9,13 @@
 import UIKit
 
 
-public protocol CollectionManager: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+public protocol CollectionManager: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     var items: [Configurator]? { get }
     var cells: [UICollectionViewCell.Type]? { get }
 }
 
-public extension CollectionManager {
+extension CollectionManager {
     var cells: [UICollectionViewCell.Type]? {
         guard let items = self.items else {return nil}
         return items.map { type(of: $0).collectionCellType }}
