@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-public class FetchableImageView: UIImageView {
+open class FetchableImageView: UIImageView {
     
     public var placeholder: UIImage?
     
@@ -34,7 +34,7 @@ public class FetchableImageView: UIImageView {
         self.backgroundColor = .selectedCellBackground
     }
 
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
