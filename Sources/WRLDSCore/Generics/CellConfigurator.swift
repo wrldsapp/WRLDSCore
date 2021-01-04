@@ -13,7 +13,7 @@ import UIKit
 /// A generic class for configuring a UICollectionView with multiple custom subclasses.
 public class CellConfigurator<CellType: ConfigurableCell, DataType>: Configurator where CellType.DataType == DataType, CellType: UIView {
     
-    let item: DataType
+    public let item: DataType
     
     public static var reuseId: String {
         return String(describing: CellType.self)
