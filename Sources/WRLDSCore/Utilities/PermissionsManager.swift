@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 @_exported import Contacts
 @_exported import UserNotifications
 @_exported import Photos
@@ -16,13 +17,13 @@ import Foundation
 /// (camera, microphone, contacts, photo library, etc.)
 public class PermissionsManager {
     
-    var contactsStatus: AuthorizationStatus {
+    public var contactsStatus: AuthorizationStatus {
         return CNContactStore
             .authorizationStatus(for: .contacts)
             .authorizationStatus
     }
     
-    var photosStatus: AuthorizationStatus {
+    public var photosStatus: AuthorizationStatus {
         return PHPhotoLibrary
             .authorizationStatus()
             .authorizationStatus
@@ -33,7 +34,7 @@ public class PermissionsManager {
     /// - Parameters:
     ///   - type: The type of permission being requested.
     ///   - completion: A closure containing a boolean (true if access is given).
-    func requestPermission(for type: DevicePermissionType, completion: @escaping(_ access:Bool) -> Void) {
+    public func requestPermission(for type: DevicePermissionType, completion: @escaping(_ access:Bool) -> Void) {
         switch type {
         case .photoLibrary:
             requestPhotosAccess { (access) in completion(access) }
@@ -79,7 +80,7 @@ public class PermissionsManager {
 }
 
 
-enum DevicePermissionType {
+public enum DevicePermissionType {
     case contacts
     case camera
     case microphone
@@ -87,7 +88,7 @@ enum DevicePermissionType {
 }
 
 
-enum AuthorizationStatus {
+public enum AuthorizationStatus {
     case authorized
     case denied
     case notDetermined

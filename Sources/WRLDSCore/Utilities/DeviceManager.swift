@@ -12,10 +12,10 @@ import UIKit
 /// A class for managing the hardware and settings of the current device.
 public final class DeviceManager {
     
-    static let shared = DeviceManager()
+    public static let shared = DeviceManager()
     
     /// Determines if the current device model has a physical home button.
-    var hasHomeButton: Bool {
+    public var hasHomeButton: Bool {
         if #available(iOS 11.0, *),
         let keyWindow = UIApplication.shared.keyWindow,
         keyWindow.safeAreaInsets.bottom > 0 {
