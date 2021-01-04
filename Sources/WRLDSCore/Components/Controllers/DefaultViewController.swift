@@ -61,7 +61,7 @@ open class DefaultViewController: UIViewController {
     }
     
     
-    func startProcess() {
+    public func startProcess() {
         DispatchQueue.main.async {
             self.view.isUserInteractionEnabled = false
             NotificationCenter.default.post(name: .processStarted, object: nil)
@@ -69,7 +69,7 @@ open class DefaultViewController: UIViewController {
     }
     
     
-    func endProcess() {
+    public func endProcess() {
         DispatchQueue.main.async {
             self.view.isUserInteractionEnabled = true
             NotificationCenter.default.post(name: .processFinished, object: nil)
@@ -87,19 +87,19 @@ open class DefaultViewController: UIViewController {
     }
     
     
-    func startLoader(message: String? = nil) {
+    public func startLoader(message: String? = nil) {
         self.view.isUserInteractionEnabled = false
         self.loader.startAnimating()
     }
     
-    func stopLoader() {
+    public func stopLoader() {
         self.view.isUserInteractionEnabled = true
         self.loader.animator.stop()
         self.loader.removeFromSuperview()
     }
     
     
-    func addHomeButtonBackground() {
+    public func addHomeButtonBackground() {
         if DeviceManager.shared.hasHomeButton {
             let background = UIView(color: .backgroundGray)
             view.addSubview(background)
