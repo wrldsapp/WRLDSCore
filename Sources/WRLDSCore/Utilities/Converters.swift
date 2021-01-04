@@ -12,19 +12,19 @@ public struct Converters {
     //convert timeinterval to date
     let dateGenerator: () -> Date
     
-    init(dateGenerator: @escaping () -> Date = Date.init) {
+    public init(dateGenerator: @escaping () -> Date = Date.init) {
         self.dateGenerator = dateGenerator
     }
 
     
-    func convert(fromCents: Int?) -> Double? {
+    public func convert(fromCents: Int?) -> Double? {
         guard let cents = fromCents else {
             return nil
         }
         return Double(cents)/100.0
     }
     
-    func formatDouble(toCurrency: Double) -> String {
+    public func formatDouble(toCurrency: Double) -> String {
         let formatter = NumberFormatter()
         formatter.locale = Locale.current //Keep for future state to add locale
         formatter.numberStyle = .currency
@@ -36,7 +36,7 @@ public struct Converters {
         }
     }
     
-    func convertFromTimestamp(toDate: TimeInterval) -> Date {
+    public func convertFromTimestamp(toDate: TimeInterval) -> Date {
         return Date(timeIntervalSince1970: toDate)
     }
     
