@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class CollectionPageController: DefaultViewController {
+open class CollectionPageController: DefaultViewController {
     
     public var manager: CollectionPageManager!
     public var collectionView: PageCollectionView!
