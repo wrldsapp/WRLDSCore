@@ -11,14 +11,9 @@ import SDWebImage
 
 public class FetchableImageView: UIImageView {
     
-    var placeholder: UIImage?
+    public var placeholder: UIImage?
     
-    public init() {
-        super.init(frame: CGRect.zero)
-        self.backgroundColor = .selectedCellBackground
-    }
-    
-    var url: String? {
+    public var url: String? {
         didSet {
             if let string = url, let url = URL(string: string) {
                 // Load profile image from URL
@@ -32,6 +27,11 @@ public class FetchableImageView: UIImageView {
                 self.image = placeholder ?? UIImage(color: .selectedCellBackground)
             }
         }
+    }
+    
+    public init() {
+        super.init(frame: CGRect.zero)
+        self.backgroundColor = .selectedCellBackground
     }
 
     required init?(coder: NSCoder) {
