@@ -17,6 +17,10 @@ import Foundation
 /// (camera, microphone, contacts, photo library, etc.)
 public class PermissionsManager {
     
+    public init() {
+        return
+    }
+    
     public var contactsStatus: AuthorizationStatus {
         return CNContactStore
             .authorizationStatus(for: .contacts)
