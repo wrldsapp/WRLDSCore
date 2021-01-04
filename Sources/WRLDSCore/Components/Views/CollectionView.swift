@@ -10,9 +10,9 @@ import UIKit
 
 open class CollectionView: UICollectionView {
     
-    var topInset: CGFloat
-    var placeholder: PlaceholderView?
-    var manager: CollectionManager?
+    public var topInset: CGFloat
+    public var placeholder: PlaceholderView?
+    public var manager: CollectionManager?
     
     public init(frame: CGRect? = nil, manager: CollectionManager? = nil, topInset: CGFloat = 0) {
         let layout = UICollectionViewFlowLayout()
