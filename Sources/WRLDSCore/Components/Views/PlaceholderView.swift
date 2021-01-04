@@ -118,7 +118,7 @@ public struct PlaceholderViewModel {
     var buttonTitle: String?
     var delegate: ActionDelegate?
     
-    init(style: PlaceholderStyle, title: String?, message: String?, image: UIImage?, buttonTitle: String?, delegate: ActionDelegate?) {
+    public init(style: PlaceholderStyle, title: String?, message: String?, image: UIImage?, buttonTitle: String?, delegate: ActionDelegate?) {
         self.style = style
         self.title = title
         self.message = message

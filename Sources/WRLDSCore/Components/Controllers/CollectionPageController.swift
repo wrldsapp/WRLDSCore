@@ -35,14 +35,14 @@ open class CollectionPageController: DefaultViewController {
     }
     
     
-    func showEmptyPlaceholder() {
+    public func showEmptyPlaceholder() {
         guard let model = self.manager.placeholderModel else {fatalError("Found nil when asked to present a placeholder view.")}
         self.placeholderView = PlaceholderView(model: model)
         self.collectionView.addSubview(placeholderView!)
         placeholderView?.anchor(collectionView.topAnchor, left: collectionView.leftAnchor, bottom: collectionView.bottomAnchor, right: collectionView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, width: nil, widthConstant: 0, height: nil, heightConstant: 0, centerXInSuperView: true, centerYInSuperView: true)
     }
     
-    func hidePlaceholder() {
+    public func hidePlaceholder() {
         self.placeholderView?.removeFromSuperview()
     }
     
