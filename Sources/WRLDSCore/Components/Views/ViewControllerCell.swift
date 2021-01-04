@@ -10,7 +10,7 @@ import UIKit
 
 /// Used display a UIViewController's view inside of a cell (ex. in a PageCollectionView).
 
-class ViewControllerCell: UICollectionViewCell {
+public class ViewControllerCell: UICollectionViewCell {
 
     static let reuseID = "ViewControllerCell"
     
@@ -34,7 +34,7 @@ class ViewControllerCell: UICollectionViewCell {
     }
     
     /// Clean.
-    override func prepareForReuse() {
+    public override func prepareForReuse() {
         super.prepareForReuse()
         self.hostedView?.removeFromSuperview()
         self.hostedView = nil

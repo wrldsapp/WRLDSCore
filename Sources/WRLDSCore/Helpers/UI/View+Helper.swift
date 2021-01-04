@@ -6,9 +6,9 @@
 //  Copyright © 2020 WRLDS. All rights reserved.
 //
 
-@_exported import UIKit
+import UIKit
 
-extension UIView {
+public extension UIView {
 
     convenience init(color: UIColor) {
         self.init(frame: .zero)
@@ -57,7 +57,7 @@ extension UIView {
     // MARK: -- AUTOLAYOUT HELPERS --
     
     /// Pins the view to the superview's edges.
-    public func fillSuperview() {
+    func fillSuperview() {
         translatesAutoresizingMaskIntoConstraints = false
         if let superview = superview {
             leftAnchor.constraint(equalTo: superview.leftAnchor).isActive = true
@@ -88,7 +88,7 @@ extension UIView {
     ///   - centerXInSuperView: Should the view be horizontally centered?
     ///   - centerYInSuperView: Should the view be vertically centered?
     
-    public func anchor(_ top: NSLayoutYAxisAnchor? = nil, left: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, right: NSLayoutXAxisAnchor? = nil, topConstant: CGFloat = 0,
+    func anchor(_ top: NSLayoutYAxisAnchor? = nil, left: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, right: NSLayoutXAxisAnchor? = nil, topConstant: CGFloat = 0,
                        leftConstant: CGFloat = 0, bottomConstant: CGFloat = 0, rightConstant: CGFloat = 0, width: NSLayoutAnchor<NSLayoutDimension>? = nil,
                        widthConstant: CGFloat = 0, height: NSLayoutAnchor<NSLayoutDimension>? = nil,
                        heightConstant: CGFloat = 0, centerXInSuperView: Bool = false, centerYInSuperView: Bool = false) {
@@ -129,7 +129,7 @@ extension UIView {
     ///
     /// - Returns: The configured constraints for the view.
     
-    public func anchorWithReturnAnchors(_ top: NSLayoutYAxisAnchor? = nil, left: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil,
+    func anchorWithReturnAnchors(_ top: NSLayoutYAxisAnchor? = nil, left: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil,
                                         right: NSLayoutXAxisAnchor? = nil, topConstant: CGFloat = 0, leftConstant: CGFloat = 0, bottomConstant: CGFloat = 0, rightConstant: CGFloat = 0,  height: NSLayoutAnchor<NSLayoutDimension>? = nil, width: NSLayoutAnchor<NSLayoutDimension>? = nil,
                                         widthConstant: CGFloat = 0, heightConstant: CGFloat = 0) -> [NSLayoutConstraint] {
         translatesAutoresizingMaskIntoConstraints = false
@@ -175,7 +175,7 @@ extension UIView {
     
     
 
-    public func anchorCenterXToSuperview(constant: CGFloat = 0) {
+    func anchorCenterXToSuperview(constant: CGFloat = 0) {
         translatesAutoresizingMaskIntoConstraints = false
         if let anchor = superview?.centerXAnchor {
             centerXAnchor.constraint(equalTo: anchor, constant: constant).isActive = true
@@ -184,14 +184,14 @@ extension UIView {
     
     
     
-    public func anchorCenterYToSuperview(constant: CGFloat = 0) {
+    func anchorCenterYToSuperview(constant: CGFloat = 0) {
         translatesAutoresizingMaskIntoConstraints = false
         if let anchor = superview?.centerYAnchor {
             centerYAnchor.constraint(equalTo: anchor, constant: constant).isActive = true
         }
     }
     
-    public func anchorCenterSuperview(constantX: CGFloat = 0, constantY: CGFloat = 0) {
+    func anchorCenterSuperview(constantX: CGFloat = 0, constantY: CGFloat = 0) {
         anchorCenterXToSuperview(constant: constantX)
         anchorCenterYToSuperview(constant: constantY)
     }
@@ -204,7 +204,7 @@ extension UIView {
     ///   - views: The views to be constrained. Should be referenced by
     ///   index in format string (i.e. 'v2' for third view).
     ///
-    public func addContraintsWithFormat(_ format: String, views: UIView...) {
+    func addContraintsWithFormat(_ format: String, views: UIView...) {
         var viewDict = [String: UIView]()
         
         for (index, view) in views.enumerated() {
@@ -214,7 +214,4 @@ extension UIView {
         }
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: viewDict))
     }
-    
-    
-    
 }

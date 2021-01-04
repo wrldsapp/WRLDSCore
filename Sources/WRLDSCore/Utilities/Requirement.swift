@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct Requirement {
+public struct Requirement {
     var title: String
     var satisfied: Bool = false
     
-    init(title: String, satisfied: Bool) {
+    public init(title: String, satisfied: Bool) {
         self.title = title
         self.satisfied = satisfied
     }

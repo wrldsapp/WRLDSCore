@@ -10,13 +10,13 @@ import UIKit
 
 /// A helper class for displaying UICollectionView content.
 
-class CollectionController: DefaultViewController {
+public class CollectionController: DefaultViewController {
     
     var direction: UICollectionView.ScrollDirection!
     var manager: CollectionManager!
     
     
-    init(manager: CollectionManager?, scrollDirection: UICollectionView.ScrollDirection?) {
+    public init(manager: CollectionManager?, scrollDirection: UICollectionView.ScrollDirection?) {
         super.init(nibName: nil, bundle: nil)
         guard let manager = manager else {return}
         self.manager = manager
@@ -40,7 +40,7 @@ class CollectionController: DefaultViewController {
     }()
     
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .backgroundGray
         setupCollectionView()

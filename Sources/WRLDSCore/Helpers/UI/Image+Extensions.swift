@@ -111,7 +111,7 @@ public extension UIImage {
 }
 
 
-extension UIImage {
+public extension UIImage {
     func transformToFixImage() -> CGAffineTransform {
         if imageOrientation == .up {
             return .identity

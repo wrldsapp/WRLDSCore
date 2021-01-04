@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UITextView {
+public extension UITextView {
     
     convenience init(text: String?, font: UIFont?, color: UIColor?, isEditable: Bool = true) {
         self.init(frame: .zero)

@@ -6,7 +6,8 @@
 //  Copyright © 2020 WRLDS. All rights reserved.
 //
 import Foundation
-struct Converters {
+
+public struct Converters {
     
     //convert timeinterval to date
     let dateGenerator: () -> Date

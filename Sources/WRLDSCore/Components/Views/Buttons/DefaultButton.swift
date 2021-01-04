@@ -8,12 +8,12 @@
 
 import UIKit
 
-class DefaultButton: UIButton{
+public class DefaultButton: UIButton{
  
     var originalButtonText: String?
     var activityIndicator: UIActivityIndicatorView!
     
-    init() {
+    public init() {
         super.init(frame: CGRect.zero)
         setupButton()
     }
@@ -30,14 +30,14 @@ class DefaultButton: UIButton{
         isEnabled = true
     }
     
-    override func didMoveToWindow() {
+    public override func didMoveToWindow() {
         if self.window != nil {
               NotificationCenter.default.addObserver(self, selector: #selector(startLoading), name: .processStarted, object: nil)
               NotificationCenter.default.addObserver(self, selector: #selector(stopLoading), name: .processFinished, object: nil)
         }
     }
     
-    override func willMove(toWindow newWindow: UIWindow?) {
+    public override func willMove(toWindow newWindow: UIWindow?) {
         if self.window == nil {
             NotificationCenter.default.removeObserver(self, name: .processStarted, object: nil)
             NotificationCenter.default.removeObserver(self, name: .processFinished, object: nil)
@@ -90,7 +90,7 @@ class DefaultButton: UIButton{
     }
     
     
-    override var isEnabled: Bool {
+    public override var isEnabled: Bool {
         didSet {
             backgroundColor = isEnabled ? .wrldsBlue : .disabledButton
             setTitleColor(isEnabled ? .white : .disabledButtonText, for: .normal)

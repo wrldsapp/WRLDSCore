@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension TimeInterval {
+public extension TimeInterval {
     
     var durationString: String {
         let formatter = DateComponentsFormatter()

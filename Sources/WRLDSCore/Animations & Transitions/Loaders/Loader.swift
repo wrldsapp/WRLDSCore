@@ -10,12 +10,12 @@ import Foundation
 import Lottie
 import UIKit
 
-class Loader: UIView {
+public class Loader: UIView {
     
     var message: String?
     var animator: AnimationView!
     
-    init(parent: UIView, message: String? = nil) {
+    public init(parent: UIView, message: String? = nil) {
         super.init(frame: CGRect.zero)
         self.animator = AnimationView(name: "loader")
         animator.animationSpeed = 1.5

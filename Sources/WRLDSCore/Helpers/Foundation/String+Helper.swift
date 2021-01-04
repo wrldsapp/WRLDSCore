@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension String {
+public extension String {
     
     var length: Int {
         return count
@@ -75,7 +75,7 @@ extension String {
 
 
 
-extension NSMutableAttributedString {
+public extension NSMutableAttributedString {
     
     /// Adds underline formatting to terms within a string.
     /// - Parameter terms: the substrings to be underlined

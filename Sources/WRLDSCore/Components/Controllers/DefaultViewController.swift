@@ -9,9 +9,9 @@
 import UIKit
 import Lottie
 
-class DefaultViewController: UIViewController {
+public class DefaultViewController: UIViewController {
 
-    override var title: String? {
+    public override var title: String? {
         didSet {
             let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15, weight: .bold)]
             self.navigationController?.navigationBar.titleTextAttributes = attributes
@@ -21,7 +21,7 @@ class DefaultViewController: UIViewController {
     lazy var loader = Loader(parent: self.view)
     var tapToDismissGesture: UITapGestureRecognizer!
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .backgroundGray
         navigationController?.navigationBar.barTintColor = .backgroundGray

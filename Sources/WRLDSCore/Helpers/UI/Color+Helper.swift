@@ -9,7 +9,7 @@
 import UIKit
 
 /// Helper methods and initializers to extend UIColor functionality.
-extension UIColor {
+public extension UIColor {
     
     // MARK: -- INITIALIZERS --
     convenience init(redValue: CGFloat, greenValue: CGFloat, blueValue: CGFloat, alphaValue: CGFloat) {

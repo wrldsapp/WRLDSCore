@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UICollectionView {
+public extension UICollectionView {
     
     
     /// Registers a custom UICollectionViewCell class. Configures it's reuseID
@@ -91,7 +91,7 @@ extension UICollectionView {
 
 
 
-extension UICollectionViewLayout {
+public extension UICollectionViewLayout {
     
     static func grid(rowCount: CGFloat, frame: CGRect) -> UICollectionViewFlowLayout {
         let lyt = UICollectionViewFlowLayout()

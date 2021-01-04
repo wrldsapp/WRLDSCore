@@ -9,7 +9,7 @@
 import UIKit
 
 
-class PlaceholderView: UIView {
+public class PlaceholderView: UIView {
     
     var model: PlaceholderViewModel!
     var button: UIButton?
@@ -17,7 +17,7 @@ class PlaceholderView: UIView {
     var titleLabel: UILabel?
     var messageLabel: UILabel?
     
-    init(model: PlaceholderViewModel) {
+    public init(model: PlaceholderViewModel) {
         super.init(frame: CGRect.zero)
         self.model = model
         layoutForStyle(style: model.style)
@@ -111,7 +111,7 @@ class PlaceholderView: UIView {
 
 
 
-struct PlaceholderViewModel {
+public struct PlaceholderViewModel {
     var style: PlaceholderStyle
     var title: String?
     var message: String?

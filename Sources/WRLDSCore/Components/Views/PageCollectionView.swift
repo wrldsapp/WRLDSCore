@@ -7,9 +7,9 @@
 
 import UIKit
 
-class PageCollectionView: UICollectionView {
+public class PageCollectionView: UICollectionView {
  
-    init(frame: CGRect) {
+    public init(frame: CGRect) {
         let fl = UICollectionViewFlowLayout()
         fl.scrollDirection = .horizontal
         super.init(frame: frame, collectionViewLayout: fl)

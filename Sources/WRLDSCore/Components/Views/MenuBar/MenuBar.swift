@@ -9,21 +9,21 @@
 import UIKit
 
 /// An object that supplies the tab content for a MenuBar.
-protocol MenuBarDataSource {
+public protocol MenuBarDataSource {
     var preselectedIndex: IndexPath? { get }
     var tabs: [String] { get }
     var isIcon: Bool { get }
 }
 
 /// An object that responds to actions taken in a MenuBar.
-protocol MenuBarDelegate {
+public protocol MenuBarDelegate {
     func didSelectTab(at indexPath: IndexPath)
 }
 
 /// A tab bar used to manage selection between multiple items.
-class MenuBar: UIView {
+public class MenuBar: UIView {
     
-    init(frame: CGRect, delegate: MenuBarDelegate?, dataSource: MenuBarDataSource) {
+    public init(frame: CGRect, delegate: MenuBarDelegate?, dataSource: MenuBarDataSource) {
         super.init(frame: frame)
         self.delegate = delegate
         self.dataSource = dataSource
@@ -57,8 +57,6 @@ class MenuBar: UIView {
     private func layout() {
         addSubviews(collectionView, slider)
         collectionView.fillSuperview()
-        //slider.anchor(nil, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, width: nil, widthConstant: 0, height: nil, heightConstant: 2, centerXInSuperView: true, centerYInSuperView: false)
-        
         collectionView.reloadData()
     }
     
@@ -71,12 +69,12 @@ class MenuBar: UIView {
 
 extension MenuBar: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dataSource.tabs.count
     }
     
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let dataSource = dataSource else { fatalError("Unexpectedly found nil in MenuBar datasource.")}
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuBarCell.reuseID, for: indexPath) as! MenuBarCell
@@ -91,19 +89,19 @@ extension MenuBar: UICollectionViewDataSource, UICollectionViewDelegate, UIColle
     }
     
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: frame.width/CGFloat(dataSource.tabs.count), height: frame.height)
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         delegate.didSelectTab(at: indexPath)
     }
 }

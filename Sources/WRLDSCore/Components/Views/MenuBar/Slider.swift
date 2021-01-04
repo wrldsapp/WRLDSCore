@@ -34,8 +34,7 @@ class Slider: UIView {
     
     /// Creates the indicator for the slider and adds it to the view.
     private func addIndicator() {
-        print("TABCOUNT \(count)")
-      
+        
         indicator = UIView(frame: CGRect(x: 0, y: self.frame.height - 2, width: (self.frame.width/count)/2, height: 2))
         addSubview(indicator)
         indicator.backgroundColor = .primaryText

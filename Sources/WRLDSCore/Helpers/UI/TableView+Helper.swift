@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UITableView {
+public extension UITableView {
     
     /// Registers a custom TableView cell class. 
     func registerCell<Cell: UITableViewCell>(_ cellClass: Cell.Type) {

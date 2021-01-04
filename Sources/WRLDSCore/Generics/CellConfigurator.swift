@@ -11,19 +11,19 @@
 import UIKit
 
 /// A generic class for configuring a UICollectionView with multiple custom subclasses.
-class CellConfigurator<CellType: ConfigurableCell, DataType>: Configurator where CellType.DataType == DataType, CellType: UIView {
+public class CellConfigurator<CellType: ConfigurableCell, DataType>: Configurator where CellType.DataType == DataType, CellType: UIView {
     
     let item: DataType
     
-    static var reuseId: String {
+    public static var reuseId: String {
         return String(describing: CellType.self)
     }
     
-    init(item: DataType) {
+    public init(item: DataType) {
         self.item = item
     }
     
-    static var collectionCellType: UICollectionViewCell.Type {
+    public static var collectionCellType: UICollectionViewCell.Type {
         guard let type = CellType.self as? UICollectionViewCell.Type else {
             fatalError("Could not case Configurable cell as UICollectionViewCell.")
         }
@@ -31,7 +31,7 @@ class CellConfigurator<CellType: ConfigurableCell, DataType>: Configurator where
     }
 
     
-    static var tableCellType: UITableViewCell.Type {
+    public static var tableCellType: UITableViewCell.Type {
         guard let type = CellType.self as? UITableViewCell.Type else {
             fatalError("Could not case Configurable cell as UITableViewCell.")
         }
@@ -39,20 +39,20 @@ class CellConfigurator<CellType: ConfigurableCell, DataType>: Configurator where
     }
     
 
-    func configure(cell: UIView) {
+    public func configure(cell: UIView) {
         (cell as! CellType).configure(model: item)
     }
 }
 
 
-protocol ConfigurableCell {
+public protocol ConfigurableCell {
     associatedtype DataType
     func configure(model: DataType)
     
 }
 
 
-protocol Configurator {
+public protocol Configurator {
     static var reuseId: String {get}
     static var collectionCellType: UICollectionViewCell.Type {get}
     static var tableCellType: UITableViewCell.Type {get}

@@ -9,11 +9,11 @@
 import UIKit
 import SDWebImage
 
-class FetchableImageView: UIImageView {
+public class FetchableImageView: UIImageView {
     
     var placeholder: UIImage?
     
-    init() {
+    public init() {
         super.init(frame: CGRect.zero)
         self.backgroundColor = .selectedCellBackground
     }

@@ -8,13 +8,13 @@
 
 import UIKit
 
-class NavigationController: UINavigationController, UINavigationControllerDelegate {
+public class NavigationController: UINavigationController, UINavigationControllerDelegate {
     
     
     var separator: UIView?
    
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
         layoutNavBar()
@@ -48,20 +48,20 @@ class NavigationController: UINavigationController, UINavigationControllerDelega
     }
     
     
-    override init(rootViewController: UIViewController) {
+    public override init(rootViewController: UIViewController) {
         super.init(rootViewController: rootViewController)
         self.updateBarTint()
     }
     
     
-    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+    public func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         viewController.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         viewController.viewWillAppear(animated)
         
     }
     
     
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         self.updateBarTint()
     }

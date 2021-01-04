@@ -8,18 +8,18 @@
 
 import UIKit
 
-class CollectionPageController: DefaultViewController {
+public class CollectionPageController: DefaultViewController {
     
     var manager: CollectionPageManager!
     var collectionView: PageCollectionView!
     var menubar: MenuBar!
     var placeholderView: PlaceholderView?
     
-    init() {
+    public init() {
         super.init(nibName: nil, bundle: nil)
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         collectionView = PageCollectionView(frame: CGRect(x: 0, y: view.safeAreaLayoutGuide.layoutFrame.minY + 35, width: view.frame.width, height: view.safeAreaLayoutGuide.layoutFrame.height - 150))
         menubar = MenuBar(frame: CGRect(x:0, y: self.view.safeAreaLayoutGuide.layoutFrame.minY, width: view.frame.width, height: 35), delegate: self, dataSource: manager)
@@ -59,32 +59,32 @@ class CollectionPageController: DefaultViewController {
 
 
 extension CollectionPageController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { return manager.numberOfPages }
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { return manager.numberOfPages }
     
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ViewControllerCell.reuseID, for: indexPath) as! ViewControllerCell
         cell.hostedView = manager.collectionView(withFrame: cell.frame, forCellAt: indexPath)
         return cell
     }
     
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return collectionView.frame.size
     }
     
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
     
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
     
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView is UICollectionView {
             let pagesFloat = CGFloat(self.manager.numberOfPages)
             let percentage = scrollView.contentOffset.x / view.frame.width
@@ -105,7 +105,7 @@ extension CollectionPageController: UICollectionViewDelegate, UICollectionViewDa
 
 
 extension CollectionPageController: MenuBarDelegate {
-    func didSelectTab(at indexPath: IndexPath) {
+    public func didSelectTab(at indexPath: IndexPath) {
         collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
     }
 }

@@ -8,18 +8,18 @@
 
 import UIKit
 
-class AlertButton: UIButton {
+public class AlertButton: UIButton {
     
     var title: String!
     var style: AlertButtonStyle!
     
-    override var isHighlighted: Bool {
+    public override var isHighlighted: Bool {
         didSet {
             backgroundColor = isHighlighted ? .selectedCellBackground : .containerBackground
         }
     }
     
-    init(title: String, style: AlertButtonStyle) {
+    public init(title: String, style: AlertButtonStyle) {
         super.init(frame: CGRect.zero)
         self.title = title
         self.style = style
@@ -48,7 +48,7 @@ class AlertButton: UIButton {
 }
 
 
-enum AlertButtonStyle {
+public enum AlertButtonStyle {
     case cancel
     case confirm
 }

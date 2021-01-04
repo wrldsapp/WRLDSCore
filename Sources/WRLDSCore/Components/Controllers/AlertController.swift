@@ -9,7 +9,7 @@
 import UIKit
 
 /// A custom alert
-class AlertController: UIViewController {
+public class AlertController: UIViewController {
 
     var alertTitle: String!
     var subtitle: String?
@@ -39,7 +39,7 @@ class AlertController: UIViewController {
     lazy var separator = UIView(color: .separator)
     lazy var ySeparator = UIView(color: .separator)
     
-    init(title: String, subtitle: String? = nil, dismissTitle: String? = nil) {
+    public init(title: String, subtitle: String? = nil, dismissTitle: String? = nil) {
         super.init(nibName: nil, bundle: nil)
         self.alertTitle = title
         self.modalPresentationStyle = .overFullScreen
@@ -93,7 +93,7 @@ class AlertController: UIViewController {
     }
     
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         // Do any additional setup after loading the view.

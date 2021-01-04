@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UITapGestureRecognizer {
+public extension UITapGestureRecognizer {
     
     /// Detects taps on a substring within a UILabel's text. Used for linking.
     /// - Parameters:

@@ -10,7 +10,7 @@ import UIKit
 
 /// Extends the UILabel class with custom methods and initializers.
 
-extension UILabel {
+public extension UILabel {
     
     convenience init(text: String?, font: UIFont?, color: UIColor?, textAlignment: NSTextAlignment? = nil, numberOfLines: Int? = 1 ) {
         self.init(frame: .zero)

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 /// A class for managing the hardware and settings of the current device.
-final class DeviceManager {
+public final class DeviceManager {
     
     static let shared = DeviceManager()
     

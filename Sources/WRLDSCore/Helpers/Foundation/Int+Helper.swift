@@ -10,7 +10,7 @@ import Foundation
 
 
 
-extension Int {
+public extension Int {
     
     var truncatedString: String { return Converters.getStringFrom(self)}
     

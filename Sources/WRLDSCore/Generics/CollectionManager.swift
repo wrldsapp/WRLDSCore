@@ -9,19 +9,19 @@
 import UIKit
 
 
-protocol CollectionManager: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+public protocol CollectionManager: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     var items: [Configurator]? { get }
     var cells: [UICollectionViewCell.Type]? { get }
 }
 
-extension CollectionManager {
+public extension CollectionManager {
     var cells: [UICollectionViewCell.Type]? {
         guard let items = self.items else {return nil}
         return items.map { type(of: $0).collectionCellType }}
     var items: [Configurator]? { return nil }
 }
 
-@objc protocol CollectionManagerDelegate {
+@objc public protocol CollectionManagerDelegate {
     func reloadItems(at indexPath: IndexPath, tag: Int) -> Void
     @objc optional func shouldStartProcess() -> Void
     @objc optional func shouldEndProcess() -> Void
