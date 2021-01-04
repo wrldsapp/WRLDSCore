@@ -27,7 +27,12 @@ let package = Package(
     
         .target(
             name: "WRLDSCore",
-            dependencies: ["SDWebImage", "Lottie"]),
+            dependencies: ["SDWebImage", "Lottie"],
+            resources: [
+                .process("WRLDSCore/Resources/loader.json"),
+                .process("WRLDSCore/Resources/cellLoader.json")
+            ]),
+
         .testTarget(
             name: "WRLDSCoreTests",
             dependencies: ["WRLDSCore"]),
