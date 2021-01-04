@@ -35,7 +35,7 @@ open class DefaultViewController: UIViewController {
     }
     
     
-    func add(asChildViewController childController: UIViewController) {
+    public func add(asChildViewController childController: UIViewController) {
         addChild(childController)
         view.addSubview(childController.view)
         childController.view.anchor(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, width: nil, widthConstant: 0, height: nil, heightConstant: 0, centerXInSuperView: true, centerYInSuperView: true)
@@ -43,7 +43,7 @@ open class DefaultViewController: UIViewController {
     }
     
     
-    func remove(asChildViewController childController: UIViewController) {
+    public func remove(asChildViewController childController: UIViewController) {
         childController.willMove(toParent: nil)
         childController.view.removeFromSuperview()
         childController.removeFromParent()
