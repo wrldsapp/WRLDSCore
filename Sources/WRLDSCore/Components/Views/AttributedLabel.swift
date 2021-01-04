@@ -16,8 +16,8 @@ public protocol AttributedLabelDelegate {
 
 public class AttributedLabel: UILabel {
 
-    var delegate: AttributedLabelDelegate?
-    var termRanges: [String: NSRange]?
+    public var delegate: AttributedLabelDelegate?
+    public var termRanges: [String: NSRange]?
     
     public init() {
         super.init(frame: CGRect.zero)
@@ -34,7 +34,7 @@ public class AttributedLabel: UILabel {
     
     
     // Format the linked text.
-    func addLinkedText(color: UIColor, underline: Bool, terms: [String]) {
+    public func addLinkedText(color: UIColor, underline: Bool, terms: [String]) {
         guard let text = text else {return}
         updateTermStore(terms: terms)
         let nsmas = NSMutableAttributedString(string: text).formatLinks(terms: terms, underlined: underline, linkColor: color, textSize: self.font.pointSize)
@@ -42,7 +42,7 @@ public class AttributedLabel: UILabel {
     }
     
     
-    func highlightRequirements(reqs: [Requirement]) {
+    public func highlightRequirements(reqs: [Requirement]) {
         guard let text = text else {return}
         let nsmas = NSMutableAttributedString(string: text).highlightRequirements(reqs: reqs)
         self.attributedText = nsmas
