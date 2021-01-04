@@ -11,9 +11,9 @@ import UIKit
 /// A custom alert
 public class AlertController: UIViewController {
 
-    var alertTitle: String!
-    var subtitle: String?
-    var dismissTitle: String?
+    public var alertTitle: String!
+    public var subtitle: String?
+    public var dismissTitle: String?
     
     lazy var titleLabel = UILabel(text: self.alertTitle, font: .systemFont(ofSize: 17, weight: .semibold), color: .primaryText, textAlignment: .center, numberOfLines: 1)
     
@@ -79,7 +79,7 @@ public class AlertController: UIViewController {
     }
     
     
-    func addButton(title: String, handler: @escaping ()->()) {
+    public func addButton(title: String, handler: @escaping ()->()) {
         let button = AlertButton(title: title, style: .confirm)
         button.addAction(action: handler)
         stackView.addArrangedSubview(button)
