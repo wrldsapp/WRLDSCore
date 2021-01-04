@@ -30,8 +30,8 @@ public class MenuBar: UIView {
         layout()
     }
     
-    var delegate: MenuBarDelegate!
-    var dataSource: MenuBarDataSource!
+    public var delegate: MenuBarDelegate!
+    public var dataSource: MenuBarDataSource!
     
     
     lazy var slider: Slider = {

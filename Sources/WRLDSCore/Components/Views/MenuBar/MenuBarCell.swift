@@ -10,7 +10,7 @@ import UIKit
 
 class MenuBarCell: UICollectionViewCell {
     
-    static let reuseID = "MenuBarCell"
+    public static let reuseID = "MenuBarCell"
     var isImage: Bool!
    
     lazy var imageView: UIImageView = {
