@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 public class PlaceholderView: UIView {
     
     var model: PlaceholderViewModel!
@@ -130,7 +129,7 @@ public struct PlaceholderViewModel {
 }
 
 
-protocol ActionDelegate {
+public protocol ActionDelegate {
     func didTap(_ sender: Any)
 }
 
