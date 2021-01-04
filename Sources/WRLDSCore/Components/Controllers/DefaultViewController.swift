@@ -19,7 +19,7 @@ open class DefaultViewController: UIViewController {
     }
     
     lazy var loader = Loader(parent: self.view)
-    var tapToDismissGesture: UITapGestureRecognizer!
+    public var tapToDismissGesture: UITapGestureRecognizer!
     
     public override func viewDidLoad() {
         super.viewDidLoad()
