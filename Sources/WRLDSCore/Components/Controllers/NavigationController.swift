@@ -8,13 +8,11 @@
 
 import UIKit
 
-public class NavigationController: UINavigationController, UINavigationControllerDelegate {
+open class NavigationController: UINavigationController, UINavigationControllerDelegate {
     
-    
-    var separator: UIView?
+    public var separator: UIView?
    
-    
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
         layoutNavBar()
@@ -32,7 +30,7 @@ public class NavigationController: UINavigationController, UINavigationControlle
     }
     
     
-    func showNavSeparator() {
+    public func showNavSeparator() {
         if separator == nil {
             separator =  UIView(color: .separator)
             navigationBar.addSubview(separator!)
@@ -43,7 +41,7 @@ public class NavigationController: UINavigationController, UINavigationControlle
     }
     
     
-    func hideSeparator() {
+    public func hideSeparator() {
         separator?.isHidden = true
     }
     
@@ -75,7 +73,7 @@ public class NavigationController: UINavigationController, UINavigationControlle
     }
     
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         updateBarTint()
     }
