@@ -134,7 +134,7 @@ public protocol ActionDelegate {
 }
 
 
-enum PlaceholderStyle {
+public enum PlaceholderStyle {
     case fullscreen
     case condensed
 }
