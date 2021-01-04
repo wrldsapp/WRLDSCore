@@ -42,7 +42,7 @@ public struct Converters {
     
     
     
-    static func getStringFrom(_ int: Int) -> String {
+    public static func getStringFrom(_ int: Int) -> String {
         
         typealias Abbreviation = (threshold: Double, divisor: Double, suffix: String)
         
