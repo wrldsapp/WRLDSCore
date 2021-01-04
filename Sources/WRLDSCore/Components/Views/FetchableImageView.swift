@@ -13,7 +13,7 @@ open class FetchableImageView: UIImageView {
     
     public var placeholder: UIImage?
     
-    public var url: String? {
+    open var url: String? {
         didSet {
             if let string = url, let url = URL(string: string) {
                 // Load profile image from URL
