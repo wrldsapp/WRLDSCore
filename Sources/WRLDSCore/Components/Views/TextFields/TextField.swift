@@ -9,7 +9,7 @@
 import UIKit
 
 /// Default text field. Can be configured for various FieldInputType cases
-class TextField: UITextField {
+public class TextField: UITextField {
     
     var type: FieldInputType? {
         didSet {
@@ -18,7 +18,7 @@ class TextField: UITextField {
         }
     }
     
-    override var placeholder: String? {
+    open override var placeholder: String? {
         didSet {
             guard let placeholder = placeholder else {return}
             self.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: UIColor.disabledButtonText])
@@ -26,7 +26,7 @@ class TextField: UITextField {
     }
     
     
-    init() {
+    public init() {
         super.init(frame: CGRect.zero)
         layout()
     }
@@ -82,7 +82,7 @@ class TextField: UITextField {
 }
 
 
-enum FieldInputType {
+public enum FieldInputType {
     case birthday
     case phone
     case email
