@@ -9,17 +9,17 @@
 import UIKit
 
 
-protocol AttributedLabelDelegate {
+public protocol AttributedLabelDelegate {
     func didSelect(term: String)
 }
 
 
-class AttributedLabel: UILabel {
+public class AttributedLabel: UILabel {
 
     var delegate: AttributedLabelDelegate?
     var termRanges: [String: NSRange]?
     
-    init() {
+    public init() {
         super.init(frame: CGRect.zero)
         configureTap()
     }
