@@ -8,8 +8,8 @@
 import Foundation
 
 public struct Requirement {
-    var title: String
-    var satisfied: Bool = false
+    public var title: String
+    public var satisfied: Bool = false
     
     public init(title: String, satisfied: Bool) {
         self.title = title
