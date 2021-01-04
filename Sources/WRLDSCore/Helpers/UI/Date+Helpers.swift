@@ -34,7 +34,7 @@ public extension DateFormatter {
     }
 }
 
-enum DateFormat: String {
+public enum DateFormat: String {
     case ISO8601 = "yyyy-MM-dd"
     case readable = "MMM dd, yyyy"
 }
