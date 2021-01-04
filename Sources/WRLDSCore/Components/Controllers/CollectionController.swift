@@ -12,8 +12,8 @@ import UIKit
 
 open class CollectionController: DefaultViewController {
     
-    var direction: UICollectionView.ScrollDirection!
-    var manager: CollectionManager!
+    public var direction: UICollectionView.ScrollDirection!
+    public var manager: CollectionManager!
     
     
     public init(manager: CollectionManager?, scrollDirection: UICollectionView.ScrollDirection?) {
@@ -40,7 +40,7 @@ open class CollectionController: DefaultViewController {
     }()
     
     
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .backgroundGray
         setupCollectionView()
