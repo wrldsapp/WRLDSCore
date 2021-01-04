@@ -8,13 +8,13 @@
 
 import UIKit
 
-class CollectionView: UICollectionView {
+open class CollectionView: UICollectionView {
     
     var topInset: CGFloat
     var placeholder: PlaceholderView?
     var manager: CollectionManager?
     
-    init(frame: CGRect? = nil, manager: CollectionManager? = nil, topInset: CGFloat = 0) {
+    public init(frame: CGRect? = nil, manager: CollectionManager? = nil, topInset: CGFloat = 0) {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         self.topInset = topInset
@@ -51,12 +51,12 @@ class CollectionView: UICollectionView {
     }
     
     //keyboardViewEndFrame.height - self.safeAreaInsets.bottom
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     
-    func showEmptyPlaceholder(model: PlaceholderViewModel) {
+    public func showEmptyPlaceholder(model: PlaceholderViewModel) {
         self.placeholder = PlaceholderView(model: model)
         self.addSubview(placeholder!)
         placeholder?.anchor(self.topAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, width: nil, widthConstant: 0, height: nil, heightConstant: 0, centerXInSuperView: true, centerYInSuperView: true)
@@ -66,7 +66,7 @@ class CollectionView: UICollectionView {
     }
     
     
-    func hidePlaceholder() {
+    public func hidePlaceholder() {
         self.placeholder?.removeFromSuperview()
         self.placeholder = nil
         showsVerticalScrollIndicator = true

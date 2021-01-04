@@ -9,7 +9,7 @@
 import UIKit
 import Lottie
 
-public class DefaultViewController: UIViewController {
+open class DefaultViewController: UIViewController {
 
     public override var title: String? {
         didSet {

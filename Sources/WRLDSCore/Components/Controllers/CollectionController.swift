@@ -10,7 +10,7 @@ import UIKit
 
 /// A helper class for displaying UICollectionView content.
 
-public class CollectionController: DefaultViewController {
+open class CollectionController: DefaultViewController {
     
     var direction: UICollectionView.ScrollDirection!
     var manager: CollectionManager!
@@ -57,7 +57,7 @@ public class CollectionController: DefaultViewController {
         self.view.layoutIfNeeded()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
