@@ -15,7 +15,9 @@ public protocol CollectionManager: UICollectionViewDataSource, UICollectionViewD
 
 public extension CollectionManager {
     var cells: [UICollectionViewCell.Type]? {
+        print("ATTEMPTING TO GET CELLS")
         guard let items = self.items else {return nil}
+        print("GOT ITEMS")
         return items.map { type(of: $0).collectionCellType }}
    var items: [Configurator]? { return nil }
 }
