@@ -8,12 +8,28 @@
 
 import UIKit
 
+public enum ImageResolution {
+    case profilePicuture
+    case portait
+    case square
+    case landscape
+}
+
 public extension UIImage {
     
-    
-    func resizedAsProfilePicture() -> UIImage {
-        self.resizeImage(targetSize: CGSize(width: 250, height: 250))
+    func resizedAsProfilePicture(resolution: ImageResolution) -> UIImage {
+        switch resolution {
+        case .profilePicuture:
+            return resizeImage(targetSize: CGSize(width: 250, height: 250))
+        case .portait:
+            return resizeImage(targetSize: CGSize(width: 1080, height: 1350))
+        case .landscape:
+            return resizeImage(targetSize: CGSize(width: 1080, height: 566))
+        case .square:
+            return resizeImage(targetSize: CGSize(width: 1080, height: 1080))
+        }
     }
+    
     
     // Resizes image for export.
     func resizeImage(targetSize: CGSize) -> UIImage {
