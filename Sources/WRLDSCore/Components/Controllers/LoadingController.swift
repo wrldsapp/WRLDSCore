@@ -12,6 +12,7 @@ public class LoadingController: UIViewController {
     
     var message: String?
     var animator: AnimationView!
+    var container: UIView!
     
     public init() {
         super.init(nibName: nil, bundle: nil)
@@ -23,8 +24,11 @@ public class LoadingController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         self.animator = AnimationView(filePath: Bundle.module.path(forResource: "loader", ofType: "json")!)
-        self.view.backgroundColor = .black
-        self.view.addSubview(animator)
+        self.container = UIView(color: .backgroundGray)
+        self.view.addSubviews(container, animator)
+        self.view.backgroundColor = .clear
+        
+        container.anchor(nil, left: nil, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, width: nil, widthConstant: 150, height: nil, heightConstant: 150, centerXInSuperView: true, centerYInSuperView: true)
         
         animator.anchor(nil, left: nil, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, width: nil, widthConstant: 150, height: nil, heightConstant: 150, centerXInSuperView: true, centerYInSuperView: true)
         
