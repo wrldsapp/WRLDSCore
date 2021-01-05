@@ -22,7 +22,7 @@ public class LoadingController: UIViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-        self.animator = AnimationView(filePath: Bundle.module.path(forResource: "loader", ofType: "json"))
+        self.animator = AnimationView(filePath: Bundle.module.path(forResource: "loader", ofType: "json")!)
         self.view.backgroundColor = .black
         self.view.addSubview(animator)
         
