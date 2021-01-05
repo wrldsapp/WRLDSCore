@@ -22,8 +22,8 @@ public class LoadingController: UIViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-        self.animator = AnimationView(filePath: "WRLDSCore/Resources/loader.json")
-        self.view.backgroundColor = .clear
+        self.animator = AnimationView(filePath: Bundle.module.path(forResource: "loader", ofType: "json"))
+        self.view.backgroundColor = .black
         self.view.addSubview(animator)
         
         animator.anchor(nil, left: nil, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, width: nil, widthConstant: 150, height: nil, heightConstant: 150, centerXInSuperView: true, centerYInSuperView: true)
