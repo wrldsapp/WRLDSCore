@@ -17,7 +17,7 @@ public enum ImageResolution {
 
 public extension UIImage {
     
-    func resizedAsProfilePicture(resolution: ImageResolution) -> UIImage {
+    func resized(as resolution: ImageResolution) -> UIImage {
         switch resolution {
         case .profilePicuture:
             return resizeImage(targetSize: CGSize(width: 250, height: 250))
