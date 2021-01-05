@@ -19,7 +19,7 @@ public extension UIImage {
     
     func resized(as resolution: ImageResolution) -> UIImage {
         switch resolution {
-        case .profilePicuture:
+        case .profilePicture:
             return resizeImage(targetSize: CGSize(width: 250, height: 250))
         case .portrait:
             return resizeImage(targetSize: CGSize(width: 1080, height: 1350))
