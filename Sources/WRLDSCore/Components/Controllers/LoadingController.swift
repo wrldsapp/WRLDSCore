@@ -24,11 +24,12 @@ public class LoadingController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         self.animator = AnimationView(filePath: Bundle.module.path(forResource: "loader", ofType: "json")!)
-        self.container = UIView(color: .backgroundGray)
+        self.container = UIView(color: .containerBackground)
         self.view.addSubviews(container, animator)
         self.view.backgroundColor = .clear
+        self.container.cornerRadius = 5
         
-        container.anchor(nil, left: nil, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, width: nil, widthConstant: 150, height: nil, heightConstant: 150, centerXInSuperView: true, centerYInSuperView: true)
+        container.anchor(nil, left: nil, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, width: nil, widthConstant: 75, height: nil, heightConstant: 75, centerXInSuperView: true, centerYInSuperView: true)
         
         animator.anchor(nil, left: nil, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, width: nil, widthConstant: 150, height: nil, heightConstant: 150, centerXInSuperView: true, centerYInSuperView: true)
         
@@ -50,6 +51,7 @@ public class LoadingController: UIViewController {
     
     
     func startAnimating() {
+        animator.animationSpeed = 1.5
         animator.play(fromProgress: 1, toProgress: 0, loopMode: .loop, completion: nil)
     }
     
