@@ -9,7 +9,7 @@
 import UIKit
 
 public enum ImageResolution {
-    case profilePicuture
+    case profilePicture
     case portait
     case square
     case landscape
