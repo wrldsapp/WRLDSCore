@@ -10,7 +10,7 @@ import UIKit
 
 public enum ImageResolution {
     case profilePicture
-    case portait
+    case portrait
     case square
     case landscape
 }
@@ -21,7 +21,7 @@ public extension UIImage {
         switch resolution {
         case .profilePicuture:
             return resizeImage(targetSize: CGSize(width: 250, height: 250))
-        case .portait:
+        case .portrait:
             return resizeImage(targetSize: CGSize(width: 1080, height: 1350))
         case .landscape:
             return resizeImage(targetSize: CGSize(width: 1080, height: 566))
