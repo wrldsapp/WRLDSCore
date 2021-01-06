@@ -34,11 +34,12 @@ public class LoadingController: UIViewController {
         animator.anchor(nil, left: nil, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, width: nil, widthConstant: 150, height: nil, heightConstant: 150, centerXInSuperView: true, centerYInSuperView: true)
         
         colorize()
+        startAnimating()
     }
     
     
     public override func viewDidAppear(_ animated: Bool) {
-        startAnimating()
+       // startAnimating()
     }
     
     
