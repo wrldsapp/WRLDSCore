@@ -9,6 +9,11 @@
 import UIKit
 import Lottie
 
+
+/// ------------------------------------------------------
+/// A Base controller with common functionality & styling.
+///-------------------------------------------------------
+
 open class DefaultViewController: UIViewController {
 
     open override var title: String? {
@@ -61,6 +66,11 @@ open class DefaultViewController: UIViewController {
     }
     
     
+    ///---------------------
+    /// Start Async Process
+    ///---------------------
+    /// Notifies necessary components that an async process
+    /// has started.
     public func startProcess() {
         DispatchQueue.main.async {
             self.view.isUserInteractionEnabled = false
@@ -68,7 +78,11 @@ open class DefaultViewController: UIViewController {
         }
     }
     
-    
+    ///---------------------
+    /// End Async Process
+    ///---------------------
+    /// Notifies necessary components that an async process
+    /// has eneded
     public func endProcess() {
         DispatchQueue.main.async {
             self.view.isUserInteractionEnabled = true
@@ -99,6 +113,7 @@ open class DefaultViewController: UIViewController {
     }
     
     
+    
     public func addHomeButtonBackground() {
         if DeviceManager.shared.hasHomeButton {
             let background = UIView(color: .backgroundGray)
@@ -107,10 +122,21 @@ open class DefaultViewController: UIViewController {
         }
     }
     
-    
+    ///-------------------
+    /// Show Separator
+    ///-------------------
     public func showNavSeparator() {
         if let nav = self.navigationController as? NavigationController {
             nav.showNavSeparator()
+        }
+    }
+    
+    ///-------------------
+    /// Hide Separator
+    ///-------------------
+    public func hideNavSeparator() {
+        if let nav = self.navigationController as? NavigationController {
+            nav.hideSeparator()
         }
     }
 }
