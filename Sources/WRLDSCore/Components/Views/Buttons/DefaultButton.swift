@@ -25,8 +25,6 @@ public class DefaultButton: UIButton{
         layer.masksToBounds = true
         titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         isUserInteractionEnabled = true
-      
-        
         isEnabled = true
     }
     
@@ -95,6 +93,15 @@ public class DefaultButton: UIButton{
             backgroundColor = isEnabled ? .wrldsBlue : .disabledButton
             setTitleColor(isEnabled ? .white : .disabledButtonText, for: .normal)
         }
+    }
+    
+    
+    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.alpha = 0.7
+    }
+    
+    public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.alpha = 1.0
     }
     
     
