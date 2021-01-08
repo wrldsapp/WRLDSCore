@@ -41,7 +41,7 @@ public class PlaceholderView: UIView {
             titleLabel?.translatesAutoresizingMaskIntoConstraints = false
             titleLabel?.topAnchor.constraint(
                 equalTo: model.image == nil ? centerYAnchor : imageView!.bottomAnchor,
-                constant: model.image == nil ? -120 : 10).isActive = true
+                constant: model.image == nil ? -120 : 16).isActive = true
             titleLabel?.leftAnchor.constraint(
                 equalTo: leftAnchor,
                 constant: 45).isActive = true
