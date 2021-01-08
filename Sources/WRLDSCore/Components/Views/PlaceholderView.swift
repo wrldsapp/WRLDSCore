@@ -39,7 +39,7 @@ public class PlaceholderView: UIView {
         }
         
         if let title = model.title {
-            titleLabel = UILabel(text: title, font: .systemFont(ofSize: 16, weight: .semibold), color: .primaryText, textAlignment: .center, numberOfLines: 0)
+            titleLabel = UILabel(text: title, font: .systemFont(ofSize: 15, weight: .bold), color: .primaryText, textAlignment: .center, numberOfLines: 0)
             self.addSubview(titleLabel!)
             titleLabel?.translatesAutoresizingMaskIntoConstraints = false
             titleLabel?.topAnchor.constraint(
@@ -55,7 +55,7 @@ public class PlaceholderView: UIView {
         
         
         if let message = model.message {
-            messageLabel = UILabel(text: message, font: .systemFont(ofSize: 13, weight: .regular), color: .secondaryText, textAlignment: .center, numberOfLines: 0)
+            messageLabel = UILabel(text: message, font: .systemFont(ofSize: 14, weight: .regular), color: .secondaryText, textAlignment: .center, numberOfLines: 0)
             
             messageLabel?.translatesAutoresizingMaskIntoConstraints = false
             addSubview(messageLabel!)
