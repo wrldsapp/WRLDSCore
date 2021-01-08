@@ -28,6 +28,7 @@ public class PlaceholderView: UIView {
     
         if let image = model.image {
             imageView = UIImageView(image: image)
+            imageView?.backgroundColor = .wrldsBlue
             //imageView?.contentMode = .center
             imageView?.translatesAutoresizingMaskIntoConstraints = false
             self.addSubview(imageView!)
