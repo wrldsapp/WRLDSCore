@@ -19,5 +19,12 @@ public extension UIViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         //if separator { showNavSeparator()}
     }
+    
+    // Returns the previous viewcontroller in the navigation stack, if there is one.
+    var previousViewController: UIViewController? {
+        guard let currentIndex = self.navigationController?.viewControllers.firstIndex(of: self),
+              currentIndex != 0 else { return nil}
+        return self.navigationController?.viewControllers[currentIndex - 1]
+    }
 }
 
