@@ -28,13 +28,11 @@ public class PlaceholderView: UIView {
     
         if let image = model.image {
             imageView = UIImageView(image: image)
-            imageView?.contentMode = .center
+            //imageView?.contentMode = .center
             imageView?.translatesAutoresizingMaskIntoConstraints = false
             self.addSubview(imageView!)
-            imageView?.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -150).isActive = true
+            imageView?.bottomAnchor.constraint(equalTo: centerYAnchor)).isActive = true
             imageView?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-            imageView?.widthAnchor.constraint(equalToConstant: 100).isActive = true
-            imageView?.heightAnchor.constraint(equalToConstant: 100).isActive = true
             imageView?.tintColor = .wrldsGrayText
         }
         
