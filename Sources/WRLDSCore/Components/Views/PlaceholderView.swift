@@ -31,7 +31,7 @@ public class PlaceholderView: UIView {
             //imageView?.contentMode = .center
             imageView?.translatesAutoresizingMaskIntoConstraints = false
             self.addSubview(imageView!)
-            imageView?.bottomAnchor.constraint(equalTo: centerYAnchor)).isActive = true
+            imageView?.bottomAnchor.constraint(equalTo: centerYAnchor).isActive = true
             imageView?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
             imageView?.tintColor = .wrldsGrayText
         }
