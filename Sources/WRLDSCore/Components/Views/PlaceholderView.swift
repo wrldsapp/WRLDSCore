@@ -84,7 +84,7 @@ public class PlaceholderView: UIView {
                 button?.translatesAutoresizingMaskIntoConstraints = false
                 button?.topAnchor.constraint(equalTo: messageLabel == nil ? titleLabel!.bottomAnchor : messageLabel!.bottomAnchor, constant: 20).isActive = true
                 button?.heightAnchor.constraint(equalToConstant: 40).isActive = true
-                button?.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.75).isActive = true
+                button?.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.65).isActive = true
                 button?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
                 button?.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
                 button?.tintColor = .wrldsBlue
