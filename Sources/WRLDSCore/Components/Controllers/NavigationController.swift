@@ -72,7 +72,7 @@ open class NavigationController: UINavigationController, UINavigationControllerD
         }
     }
     
-    
+
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         updateBarTint()

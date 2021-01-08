@@ -55,7 +55,7 @@ public class PlaceholderView: UIView {
         
         
         if let message = model.message {
-            messageLabel = UILabel(text: message, font: .systemFont(ofSize: 15, weight: .regular), color: .secondaryText, textAlignment: .center, numberOfLines: 0)
+            messageLabel = UILabel(text: message, font: .systemFont(ofSize: 13, weight: .regular), color: .secondaryText, textAlignment: .center, numberOfLines: 0)
             
             messageLabel?.translatesAutoresizingMaskIntoConstraints = false
             addSubview(messageLabel!)
@@ -72,7 +72,7 @@ public class PlaceholderView: UIView {
                 equalTo: (titleLabel == nil && imageView == nil) ? centerYAnchor: // If both image & title are nil, center message
                     titleLabel != nil ? titleLabel!.bottomAnchor: // Pin message to title bottom..
                     imageView!.bottomAnchor, // Pin message to image bottom
-                constant: (titleLabel == nil && imageView == nil) ? -150 : 10
+                constant: (titleLabel == nil && imageView == nil) ? -150 : 5
             ).isActive = true
         }
         
