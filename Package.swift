@@ -1,4 +1,5 @@
 // swift-tools-version:5.3
+// swift-tools-version:5.2
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -25,7 +26,6 @@ let package = Package(
                  from: "3.1.2")
     ],
     targets: [
-    
         .target(
             name: "WRLDSCore",
             dependencies: ["SDWebImage", "Lottie"],

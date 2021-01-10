@@ -57,6 +57,8 @@ open class CollectionController: DefaultViewController {
         self.view.layoutIfNeeded()
     }
     
+    
+    
     required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
