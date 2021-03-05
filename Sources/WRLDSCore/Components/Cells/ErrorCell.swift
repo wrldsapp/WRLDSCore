@@ -1,12 +1,16 @@
 //
 //  ErrorCellCollectionViewCell.swift
-//  WRLDS
+//  ---------------------------------
+//  A cell for displaying error messages.
+
+//  See the Err object for information about
+//  custom error messages & codes.
 //
 //  Created by Garrett Jester on 9/1/20.
-//  Copyright © 2020 WRLDS. All rights reserved.
+//  Copyright © 2021 WRLDS. All rights reserved.
 //
 
-import WRLDSCore
+import UIKit
 
 public typealias ErrorItem = CellConfigurator<ErrorCell, Err?>
 

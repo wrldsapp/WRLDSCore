@@ -1,12 +1,16 @@
 //
 //  TextFieldCell.swift
-//  WRLDS
+//  -------------------
+//  A cell for displaying a default-styled
+//  TextField.
+//
+//  Use TextFieldCellModel to configure.
 //
 //  Created by Garrett Jester on 7/24/20.
-//  Copyright © 2020 WRLDS. All rights reserved.
+//  Copyright © 2022 WRLDS. All rights reserved.
 //
 
-import WRLDSCore
+import UIKit
 
 typealias TextFieldItem = CellConfigurator<TextFieldCell, TextFieldCellModel>
 
@@ -17,7 +21,6 @@ public protocol TextFieldCellDelegate: UITextFieldDelegate {
 public struct TextFieldCellModel {
     var text: String?
     var tag: Int?
-    var errorMessage: String?
     var fieldType: FieldInputType?
     var delegate: TextFieldCellDelegate?
 }
@@ -65,7 +68,6 @@ public class TextFieldCell: UICollectionViewCell, ConfigurableCell {
         field.text = model.text
         field.delegate = model.delegate
         delegate = model.delegate
-        separator.backgroundColor = (model.errorMessage == nil) ? .separator : .error
         guard let tag = model.tag else {return}
         field.tag = tag
         
@@ -76,14 +78,7 @@ public class TextFieldCell: UICollectionViewCell, ConfigurableCell {
         guard let text = field.text else {return}
         delegate?.textFieldDidChange(text: text, tag: field.tag)
     }
-    
-    
-    private func handle(err: String?) {
-        
-        //separator.backgroundColor =
-        // Otherwise display error.
-    }
-    
+ 
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

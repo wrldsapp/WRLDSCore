@@ -6,7 +6,7 @@
 //  Copyright © 2020 WRLDS. All rights reserved.
 //
 
-import WRLDSCore
+import UIKit
 
 public typealias HeaderItem = CellConfigurator<HeaderCell, HeaderModel>
 

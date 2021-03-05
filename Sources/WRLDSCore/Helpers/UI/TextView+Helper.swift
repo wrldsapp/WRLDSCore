@@ -31,7 +31,7 @@ public extension UITextView {
             let style = NSMutableParagraphStyle()
             style.lineSpacing = spacing
             self.typingAttributes = [NSAttributedString.Key.paragraphStyle: style,
-                                     NSAttributedString.Key.font: self.font
+                                     NSAttributedString.Key.font: self.font ?? UIFont.systemFont(ofSize: 14)
             ]
         }
     }
