@@ -34,19 +34,6 @@ public class TextFieldCell: UICollectionViewCell, ConfigurableCell {
     var separator = UIView(color: .separator)
     var field = TextField()
     
-    lazy var errorIcon: UIImageView = {
-        let iv = UIImageView(image: UIImage(named: "error"))
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.tintColor = .error
-        return iv
-    }()
-    
-    lazy var errorLabel: UILabel = {
-        let lbl = UILabel(text: nil, font: .error, color: .error, textAlignment: .left, numberOfLines: 0)
-        lbl.translatesAutoresizingMaskIntoConstraints = false
-        return lbl
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         layout()
