@@ -16,7 +16,6 @@ public typealias ErrorItem = CellConfigurator<ErrorCell, Err?>
 
 public class ErrorCell: UICollectionViewCell, ConfigurableCell {
     
-    
     private lazy var errorIcon: UIImageView = {
         let iv = UIImageView(image: UIImage(named: "error"))
         iv.contentMode = .scaleAspectFit

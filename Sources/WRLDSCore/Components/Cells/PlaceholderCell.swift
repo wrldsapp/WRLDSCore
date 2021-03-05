@@ -9,6 +9,8 @@
 
 import UIKit
 
+public typealias PlaceholderItem = CellConfigurator<PlaceholderCell, PlaceholderViewModel>
+
 public class PlaceholderCell: UICollectionViewCell, ConfigurableCell {
     
     public var model: PlaceholderViewModel!
